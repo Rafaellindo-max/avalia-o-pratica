@@ -1,0 +1,916 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: #f5f5f5;
+    font-family: "Roboto", sans-serif;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.nav-links {
+    font-family: "Orbitron", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    height: 75px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #ff4b24;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff5a2a;
+}
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 1.8rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 5% 50px;
+
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.subtitle {
+    color: #ff5428;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.9;
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #ff4b24;
+}
+
+.hero-text {
+    margin: 30px 0;
+    color: #aaa;
+    max-width: 500px;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.button {
+    display: inline-block;
+
+    background: #ff4b24;
+    color: white;
+
+    padding: 15px 25px;
+
+    border: none;
+    cursor: pointer;
+
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #ff7048;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 75, 36, 0.3);
+}
+
+
+/* =========================
+   MARTE 3D
+========================= */
+
+.mars-container {
+    width: 420px;
+    height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.mars {
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle at 30% 25%, #ff9a6c 0 4%, transparent 5%),
+        radial-gradient(circle at 70% 40%, #7c2518 0 8%, transparent 9%),
+        radial-gradient(circle at 40% 70%, #8e2f1d 0 10%, transparent 11%),
+        radial-gradient(circle at 60% 20%, #a73c24 0 6%, transparent 7%),
+        linear-gradient(130deg, #b94729, #4e130d);
+
+    box-shadow:
+        inset -40px -20px 60px #170402,
+        inset 20px 20px 40px rgba(255, 180, 130, 0.35),
+        0 0 80px rgba(255, 67, 31, 0.25);
+
+    animation: rotateMars 25s linear infinite;
+}
+
+@keyframes rotateMars {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 5%;
+}
+
+.dark-section {
+    max-width: none;
+    background: #101010;
+}
+
+.dark-section > * {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title p {
+    color: #ff5428;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.section-title h2 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.section-title h2 span {
+    color: #ff5428;
+}
+
+.section-description {
+    color: #999;
+    max-width: 700px;
+    line-height: 1.8;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   PLANETA
+========================= */
+
+.planet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.planet-image {
+    min-height: 500px;
+
+    background:
+        linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.8)),
+        url("https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?auto=format&fit=crop&w=1000&q=80");
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    padding: 30px;
+}
+
+.image-overlay span {
+    display: block;
+    font-family: "Orbitron";
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.image-overlay small {
+    color: #ccc;
+}
+
+.planet-info > p {
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.stat-card {
+    background: #151515;
+    border: 1px solid #252525;
+    padding: 20px;
+}
+
+.stat-card strong {
+    display: block;
+    color: #ff5428;
+    font-family: "Orbitron";
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.stat-card span {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   HABITAÇÃO
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #171717;
+    border: 1px solid #292929;
+
+    padding: 35px;
+
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #ff5428;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #888;
+    line-height: 1.7;
+}
+
+.habitat-example {
+    margin-top: 70px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.habitat-visual {
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle, #5a2015, #1b0906 65%, #080808);
+}
+
+.dome {
+    width: 300px;
+    height: 160px;
+
+    border-radius: 300px 300px 0 0;
+
+    border: 4px solid #ff7048;
+
+    position: relative;
+
+    box-shadow: 0 0 40px rgba(255, 75, 36, 0.3);
+}
+
+.dome-light {
+    width: 12px;
+    height: 12px;
+
+    background: #ffd9cc;
+
+    border-radius: 50%;
+
+    position: absolute;
+    top: 30px;
+    left: 70px;
+
+    box-shadow:
+        80px 30px #ffd9cc,
+        150px 70px #ffd9cc,
+        210px 30px #ffd9cc;
+}
+
+.tag {
+    color: #ff5428;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.habitat-text h3,
+.suit-info h3 {
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.habitat-text p,
+.suit-info p {
+    color: #999;
+    line-height: 1.8;
+}
+
+.habitat-text ul {
+    list-style: none;
+    margin-top: 25px;
+}
+
+.habitat-text li {
+    color: #ccc;
+    margin: 10px 0;
+}
+
+
+/* =========================
+   ALIMENTAÇÃO
+========================= */
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.food-card {
+    min-height: 280px;
+    padding: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    border: 1px solid #252525;
+
+    transition: 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-7px);
+}
+
+.greenhouse {
+    background:
+        linear-gradient(transparent, #111),
+        radial-gradient(circle at top, #294d2c, #111);
+}
+
+.laboratory {
+    background:
+        linear-gradient(transparent, #111),
+        radial-gradient(circle at top, #34303e, #111);
+}
+
+.water {
+    background:
+        linear-gradient(transparent, #111),
+        radial-gradient(circle at top, #183d50, #111);
+}
+
+.food-icon {
+    font-size: 3rem;
+    margin-bottom: auto;
+}
+
+.food-card h3 {
+    margin-bottom: 12px;
+}
+
+.food-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.food-list {
+    margin-top: 60px;
+    padding: 35px;
+
+    background: #141414;
+    border-left: 3px solid #ff5428;
+}
+
+.food-list h3 {
+    margin-bottom: 25px;
+}
+
+.food-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.food-items span {
+    background: #222;
+    padding: 12px 18px;
+    color: #ccc;
+}
+
+
+/* =========================
+   VESTUÁRIO
+========================= */
+
+.suit-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.suit-visual {
+    min-height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(circle, #442018, #0b0b0b 70%);
+}
+
+.astronaut {
+    width: 150px;
+    height: 360px;
+
+    position: relative;
+}
+
+.helmet {
+    width: 105px;
+    height: 105px;
+
+    border-radius: 50%;
+
+    background: #d9d9d9;
+
+    margin: auto;
+
+    padding: 12px;
+
+    box-shadow: 0 0 30px rgba(255,255,255,0.1);
+}
+
+.helmet-glass {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(135deg, #18242c, #050505);
+
+    border: 5px solid #aaa;
+}
+
+.body-suit {
+    width: 120px;
+    height: 170px;
+
+    background: #ddd;
+
+    margin: -5px auto 0;
+
+    border-radius: 35px 35px 20px 20px;
+
+    position: relative;
+}
+
+.chest-panel {
+    width: 50px;
+    height: 65px;
+
+    background: #333;
+
+    position: absolute;
+    top: 30px;
+    left: 35px;
+
+    border: 3px solid #555;
+}
+
+.leg {
+    position: absolute;
+
+    width: 40px;
+    height: 110px;
+
+    background: #ccc;
+
+    top: 260px;
+}
+
+.left-leg {
+    left: 25px;
+}
+
+.right-leg {
+    right: 25px;
+}
+
+.arm {
+    position: absolute;
+
+    width: 35px;
+    height: 120px;
+
+    background: #ccc;
+
+    top: 130px;
+}
+
+.left-arm {
+    left: 0;
+    transform: rotate(12deg);
+}
+
+.right-arm {
+    right: 0;
+    transform: rotate(-12deg);
+}
+
+.suit-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.suit-features div {
+    background: #171717;
+    padding: 20px;
+}
+
+.suit-features strong {
+    display: block;
+    color: #ff5428;
+    font-family: "Orbitron";
+    margin-bottom: 5px;
+}
+
+.suit-features span {
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   FUTURO
+========================= */
+
+.future {
+    min-height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 5%;
+
+    background:
+        linear-gradient(rgba(40, 8, 4, 0.8), rgba(5, 5, 5, 0.95)),
+        url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.future-content {
+    max-width: 850px;
+}
+
+.future-content > p {
+    color: #ff5428;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    margin-bottom: 20px;
+}
+
+.future h2 {
+    font-size: clamp(2.2rem, 6vw, 5rem);
+    line-height: 1.05;
+    margin-bottom: 35px;
+}
+
+.future h2 span {
+    display: block;
+    color: #ff5428;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 50px 20px;
+
+    background: #050505;
+
+    border-top: 1px solid #222;
+}
+
+.footer-logo {
+    font-family: "Orbitron";
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #777;
+    margin: 8px;
+}
+
+.copyright {
+    font-size: 0.75rem;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .mars-container {
+        width: 300px;
+        height: 300px;
+        margin-top: 30px;
+    }
+
+    .mars {
+        width: 230px;
+        height: 230px;
+    }
+
+    .planet-grid,
+    .habitat-example,
+    .suit-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .suit-visual {
+        min-height: 400px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 65px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        background: #0b0b0b;
+
+        flex-direction: column;
+        gap: 0;
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.3s ease;
+    }
+
+    .nav-links.active {
+        max-height: 400px;
+    }
+
+    .nav-links li {
+        text-align: center;
+        border-bottom: 1px solid #222;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 18px;
+    }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .hero h1 {
+        font-size: 4rem;
+        letter-spacing: -2px;
+    }
+
+    .section {
+        padding: 80px 6%;
+    }
+
+    .planet-image {
+        min-height: 350px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .suit-features {
+        grid-template-columns: 1fr;
+    }
+
+    .future h2 {
+        font-size: 2.5rem;
+    }
+}
